@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ShopProduct {
-    private Long productId;
-    private Long shopId;
+    private Product productId;
+    private Shop shopId;
     private boolean availableForOrdering;
 }

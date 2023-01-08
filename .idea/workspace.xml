@@ -4,29 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/dto/OrderProductDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopProductDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/entity/OrderProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/entity/enumeration/EmployeeRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/entity/enumeration/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+    <list default="true" id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderProductToOrderProductMapperDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderToOrderMapperDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ProductToProductMapperDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopProductToShopProductMapperDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopToShopMapperDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/UserToUserMapperDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/OrderProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/OrderProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/OrderProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/OrderProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/OrderProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -54,16 +55,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="shop.Application" />
@@ -93,6 +93,14 @@
       <option name="presentableId" value="Default" />
       <updated>1672762478563</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1672776212177</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672776212177</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,5 +113,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>

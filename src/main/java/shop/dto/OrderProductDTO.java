@@ -1,21 +1,28 @@
 package shop.dto;
 
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import shop.entity.enumeration.Status;
+import shop.entity.Order;
+import shop.entity.Product;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderProductDTO {
-    private Long id;
+    @Id
+    @NotNull
+    private Order orderId;
 
-    private int customerId;
-    private String orderedProductWithAmount;
-    private Long shopId;
-    private Long courierId;
-    private String shippingAddress;
-    private double totalAmount;
-    private Status status;
+    @Id
+    @NotNull
+    private Product productId;
+
+    @NotBlank
+    @Min(1)
+    private int amount;
 }

@@ -13,4 +13,5 @@ public class Shop {
     private String address;
     private double workingHours;
     private String workingDays;
+    private User shopOwner;
 }

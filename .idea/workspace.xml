@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/OrderProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/ShopProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/ShopService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/exeption/ServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/exeption/ServiceExceptionDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/enumeration/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/enumeration/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopToShopMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopToShopMapperDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +55,11 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="shop.exeption" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="shop.Application" />
@@ -98,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673169854526</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial commit">
+      <created>1673180877196</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673180877196</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

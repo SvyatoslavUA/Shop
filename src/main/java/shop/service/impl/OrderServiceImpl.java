@@ -4,8 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import shop.dto.OrderDTO;
 import shop.dto.UserDTO;
+import shop.entity.Order;
 import shop.entity.User;
 import shop.entity.enumeration.EmployeeRole;
+import shop.entity.enumeration.Status;
+import shop.exeption.ServiceException;
 import shop.mapper.OrderToOrderMapperDTO;
 import shop.repositiry.OrderRepository;
 import shop.repositiry.UserRepository;
@@ -17,21 +20,49 @@ import java.util.stream.Collectors;
 @Service
 public class OrderServiceImpl implements OrderService {
     @Autowired
-    private final OrderToOrderMapperDTO orderMapper;
+    private OrderToOrderMapperDTO orderToOrderMapperDTO;
 
     @Autowired
-    private final OrderRepository orderRepository;
+    private OrderRepository orderRepository;
 
     @Autowired
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
 
-    public OrderServiceImpl(final OrderRepository orderRepository, final OrderToOrderMapperDTO orderMapper, final UserRepository userRepository) {
-        this.orderRepository = orderRepository;
-        this.orderMapper = orderMapper;
-        this.userRepository = userRepository;
+
+    public List<OrderDTO> getAllOrdersForCustomer(final Long userId){
+        return orderRepository.getAllOrdersForCustomer(userId).stream()
+                .map(orderToOrderMapperDTO :: toDTO).collect(Collectors.toList());
     }
 
-    public List<OrderDTO> getAllOrdersForCustomer(final UserDTO userDTO){
-        return orderRepository.findAll().stream().filter(e -> userDTO.getEmployeeRole() == EmployeeRole.CUSTOMER).filter(e -> e.getCustomerId().getId() == userDTO.getId()).map(orderMapper :: toDTO).collect(Collectors.toList());
+    public List<OrderDTO> getAllOrdersForShopOwner(final Long userId){
+        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
+        if(user.getEmployeeRole() != EmployeeRole.SHOP_OWNER){
+            throw new ServiceException(400, "!!!");
+        }
+        return orderRepository.getAllOrdersForCustomer(userId).stream()
+                .map(orderToOrderMapperDTO :: toDTO).collect(Collectors.toList());
     }
+
+    public List<OrderDTO> getAvailableOrdersCourier(final UserDTO userDTO){
+        return orderRepository.findAll().stream()
+                .filter(e -> e.getStatus() == Status.READY_TO_DELIVER)
+                .filter(e -> userDTO.getEmployeeRole() == EmployeeRole.COURIER)
+                .map(orderToOrderMapperDTO :: toDTO).collect(Collectors.toList());
+    }
+
+    public OrderDTO assignCourierToOrder(final Long userId, final Long orderId){
+        Order order = orderRepository.getOrderById(orderId);
+        order.setStatus(Status.DELIVERING);
+
+        User user = userRepository.getUserById(userId);
+        order.setCourierId(user);
+
+        return orderToOrderMapperDTO.toDTO(order);
+    }
+
+    public OrderDTO updateStatusForShopOwner(OrderDTO orderDTO){
+        return null;
+    }
+
+
 }

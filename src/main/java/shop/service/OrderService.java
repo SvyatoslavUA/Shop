@@ -6,12 +6,11 @@ import shop.dto.UserDTO;
 import java.util.List;
 
 public interface OrderService {
-    List<OrderDTO> getAllOrdersForCustomer(UserDTO userDTO);
-    List<OrderDTO> getAllOrdersForShopOwner();
-    List<OrderDTO> getAvailableOrdersCourier();
+    List<OrderDTO> getAllOrdersForCustomer(Long userId);
+    List<OrderDTO> getAllOrdersForShopOwner(UserDTO userDTO);
+    OrderDTO assignCourierToOrder(Long userId, Long orderId);
+    List<OrderDTO> getAvailableOrdersCourier(UserDTO userDTO);
     OrderDTO updateStatusForShopOwner(OrderDTO user);
-    OrderDTO updateStatusForCourier(OrderDTO user);
-    OrderDTO takeOrderForCourier(OrderDTO user);
 
 
 }

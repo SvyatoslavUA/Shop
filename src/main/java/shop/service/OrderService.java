@@ -7,10 +7,10 @@ import java.util.List;
 
 public interface OrderService {
     List<OrderDTO> getAllOrdersForCustomer(Long userId);
-    List<OrderDTO> getAllOrdersForShopOwner(UserDTO userDTO);
+    List<OrderDTO> getAllOrdersForShopOwner(Long userId);
     OrderDTO assignCourierToOrder(Long userId, Long orderId);
-    List<OrderDTO> getAvailableOrdersCourier(UserDTO userDTO);
-    OrderDTO updateStatusForShopOwner(OrderDTO user);
+    List<OrderDTO> getAvailableOrdersCourier(Long userId);
+    OrderDTO updateStatusForShopOwner(final Long userId, final Long orderId);
 
 
 }

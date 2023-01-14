@@ -3,7 +3,6 @@ package shop.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import shop.dto.OrderDTO;
-import shop.dto.UserDTO;
 import shop.entity.Order;
 import shop.entity.User;
 import shop.entity.enumeration.EmployeeRole;
@@ -15,6 +14,7 @@ import shop.repositiry.UserRepository;
 import shop.service.OrderService;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -40,13 +40,16 @@ public class OrderServiceImpl implements OrderService {
             throw new ServiceException(400, "!!!");
         }
         return orderRepository.getAllOrdersForCustomer(userId).stream()
+                .filter(e -> Objects.equals(e.getShop().getShopOwner().getId(), userId))
                 .map(orderToOrderMapperDTO :: toDTO).collect(Collectors.toList());
     }
 
-    public List<OrderDTO> getAvailableOrdersCourier(final UserDTO userDTO){
-        return orderRepository.findAll().stream()
-                .filter(e -> e.getStatus() == Status.READY_TO_DELIVER)
-                .filter(e -> userDTO.getEmployeeRole() == EmployeeRole.COURIER)
+    public List<OrderDTO> getAvailableOrdersCourier(final Long userId){
+        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
+        if(user.getEmployeeRole() != EmployeeRole.COURIER){
+            throw new ServiceException(400, "!!!");
+        }
+        return orderRepository.getAvailableOrdersCourier().stream()
                 .map(orderToOrderMapperDTO :: toDTO).collect(Collectors.toList());
     }
 
@@ -55,14 +58,13 @@ public class OrderServiceImpl implements OrderService {
         order.setStatus(Status.DELIVERING);
 
         User user = userRepository.getUserById(userId);
-        order.setCourierId(user);
+        order.setCourier(user);
 
         return orderToOrderMapperDTO.toDTO(order);
     }
 
-    public OrderDTO updateStatusForShopOwner(OrderDTO orderDTO){
+    public OrderDTO updateStatusForShopOwner(final Long userId, final Long orderId){
         return null;
     }
-
 
 }

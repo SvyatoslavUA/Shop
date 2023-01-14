@@ -40,13 +40,14 @@ public class ShopServiceImpl implements ShopService {
         if(!Objects.equals(shopDTO.getShopOwner().getId(), user.getId())){
             throw new RuntimeException("You are not the owner of this store!");
         }
+
         final Shop savedShop = shopRepository.findById(shopDTO.getId())
                 .orElseThrow(() -> new ServiceException(400, "Shop with id not found: " + shopDTO.getId(), ""));
 
         savedShop.setShopName(shopDTO.getShopName());
-        savedShop.setShopName();
-        savedShop.setShopName();
-        savedShop.setShopName();
+        savedShop.setWorkingHours(shopDTO.getWorkingHours());
+        savedShop.setWorkingDays(shopDTO.getWorkingDays());
+        savedShop.setAddress(shopDTO.getAddress());
         return shopToShopMapperDTO.toDTO(shopRepository.save(savedShop));
     }
 }

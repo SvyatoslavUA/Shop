@@ -1,25 +1,21 @@
 package shop.entity;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderProduct {
-    @NotNull
-    @NotBlank
-    private Order orderId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Order order;
 
-    @NotNull
-    @NotBlank
-    private Product productId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Product product;
 
-    @NotBlank
-    @Min(1)
     private int amount;
 }

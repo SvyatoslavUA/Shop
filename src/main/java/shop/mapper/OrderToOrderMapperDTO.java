@@ -3,13 +3,8 @@ package shop.mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import shop.dto.OrderDTO;
-import shop.dto.OrderProductDTO;
 import shop.entity.Order;
-import shop.entity.OrderProduct;
 import shop.repositiry.OrderProductRepository;
-
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 
 @Component
@@ -44,14 +39,14 @@ public class OrderToOrderMapperDTO {
         final OrderDTO orderDTO = new OrderDTO();
 
         orderDTO.setTotalAmount(order.getTotalAmount());
-        orderDTO.setCourierId(order.getCourierId());
+        orderDTO.setCourierId(order.getCourier());
         orderDTO.setId(order.getId());
 
         orderDTO.setOrderedProductWithAmount(orderProductToOrderProductMapperDTO.toDTO(order.getOrderedProductWithAmount()));
-        orderDTO.setCustomerId(order.getCustomerId());
+        orderDTO.setCustomerId(order.getCustomer());
         orderDTO.setShippingAddress(order.getShippingAddress());
         orderDTO.setStatus(order.getStatus());
-        orderDTO.setShopId(order.getShopId());
+        orderDTO.setShopId(order.getShop());
 
         return orderDTO;
     }

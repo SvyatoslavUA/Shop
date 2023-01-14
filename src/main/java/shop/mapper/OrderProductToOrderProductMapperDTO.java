@@ -13,8 +13,8 @@ public class OrderProductToOrderProductMapperDTO {
     public OrderProduct toEntity(final OrderProductDTO orderProductDTO){
         final OrderProduct orderProduct = new OrderProduct();
 
-        orderProduct.setOrderId(orderProductDTO.getOrderId());
-        orderProduct.setProductId(orderProductDTO.getProductId());
+        orderProduct.setOrder(orderProductDTO.getOrderId());
+        orderProduct.setProduct(orderProductDTO.getProductId());
         orderProduct.setAmount(orderProductDTO.getAmount());
 
         return orderProduct;
@@ -24,8 +24,8 @@ public class OrderProductToOrderProductMapperDTO {
 
         final OrderProductDTO orderProductDTO = new OrderProductDTO();
 
-        orderProductDTO.setProductId(orderProduct.getProductId());
-        orderProductDTO.setOrderId(orderProduct.getOrderId());
+        orderProductDTO.setProductId(orderProduct.getProduct());
+        orderProductDTO.setOrderId(orderProduct.getOrder());
         orderProductDTO.setAmount(orderProduct.getAmount());
 
         return orderProductDTO;

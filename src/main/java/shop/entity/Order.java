@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import shop.entity.enumeration.Status;
 
+import javax.persistence.*;
 import java.util.List;
 
 @Data
@@ -12,12 +13,26 @@ import java.util.List;
 @NoArgsConstructor
 
 public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private User customerId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User customer;
+
+    @OneToMany(mappedBy = "order")
     private List<OrderProduct> orderedProductWithAmount;
-    private Shop shopId;
-    private User courierId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Shop shop;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User courier;
+
     private String shippingAddress;
+
     private double totalAmount;
+
+    @Enumerated(EnumType.STRING)
     private Status status;
 }

@@ -9,8 +9,8 @@ public class ShopProductToShopProductMapperDTO {
     public ShopProduct toEntity(final ShopProductDTO shopProductDTO){
         final ShopProduct shopProduct = new ShopProduct();
 
-        shopProduct.setProductId(shopProductDTO.getProductId());
-        shopProduct.setShopId(shopProductDTO.getShopId());
+        shopProduct.setProduct(shopProductDTO.getProductId());
+        shopProduct.setShop(shopProductDTO.getShopId());
         shopProduct.setAvailableForOrdering(shopProductDTO.isAvailableForOrdering());
 
         return shopProduct;
@@ -19,8 +19,8 @@ public class ShopProductToShopProductMapperDTO {
     public ShopProductDTO toDTO(final ShopProduct shopProduct){
         final ShopProductDTO shopProductDTO = new ShopProductDTO();
 
-        shopProductDTO.setShopId(shopProduct.getShopId());
-        shopProductDTO.setProductId(shopProduct.getProductId());
+        shopProductDTO.setShopId(shopProduct.getShop());
+        shopProductDTO.setProductId(shopProduct.getProduct());
         shopProductDTO.setAvailableForOrdering(shopProduct.isAvailableForOrdering());
 
         return shopProductDTO;

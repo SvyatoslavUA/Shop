@@ -1,27 +1,25 @@
 package shop.dto;
 
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import shop.entity.Product;
 import shop.entity.Shop;
 
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ShopProductDTO {
-    @Id
-    @NotNull
+
+//    @NotNull
     private Product productId;
 
-    @Id
-    @NotNull
+//    @NotNull
     private Shop shopId;
 
-    @NotNull
-    @NotBlank
+//    @NotNull
+//    @NotBlank
     private boolean availableForOrdering;
 }

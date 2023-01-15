@@ -54,15 +54,23 @@ public class OrderServiceImpl implements OrderService {
     }
 
     public OrderDTO assignCourierToOrder(final Long userId, final Long orderId){
-        User user = userRepository.getUserById(userId);
+        User courier = userRepository.getUserById(userId);
         Order order = orderRepository.getOrderById(orderId);
 
-        if(user.getEmployeeRole() != EmployeeRole.COURIER){
+        if(courier.getEmployeeRole() != EmployeeRole.COURIER){
             throw new ServiceException(400, "You are not courier!!!");
         }
 
+        if(order.getStatus() != Status.READY_TO_DELIVER){
+            throw new ServiceException(400, "Status is not ready to deliver!!!");
+        }
+
         order.setStatus(Status.DELIVERING);
-        order.setCourier(user);
+        order.setCourier(courier);
+        courier.getDelivered().add(order);
+
+        orderRepository.save(order);
+        userRepository.save(courier);
 
         return orderToOrderMapperDTO.toDTO(order);
     }

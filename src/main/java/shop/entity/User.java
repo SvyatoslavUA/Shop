@@ -1,11 +1,13 @@
 package shop.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import shop.entity.enumeration.EmployeeRole;
 
-import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -15,9 +17,6 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //    todo how to map few fields?
-    @OneToMany(mappedBy = "")
-    @OneToOne(mappedBy = "shopOwner")
     private Long id;
 
     @Column(name = "name")
@@ -32,4 +31,14 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "employee_role")
     private EmployeeRole employeeRole;
+
+
+    @OneToOne(mappedBy = "shopOwner")
+    private Shop shop;
+
+    @OneToMany(mappedBy = "courier")
+    private List<Order> delivered;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Order> received;
 }

@@ -1,10 +1,9 @@
 package shop.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
 
 
 @Data
@@ -13,14 +12,17 @@ import javax.persistence.*;
 @Table(name = "shop_product")
 @Entity(name = "ShopProduct")
 public class ShopProduct {
-    @Column(name = "product_id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Product product;
-
-    @Column(name = "shop_id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Shop shop;
+    @Id
+    private Long id;
 
     @Column(name = "available_for_ordering")
     private boolean availableForOrdering;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "shop_id")
+    private Shop shop;
 }

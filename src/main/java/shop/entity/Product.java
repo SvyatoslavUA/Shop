@@ -1,10 +1,11 @@
 package shop.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -14,7 +15,6 @@ import javax.persistence.*;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @OneToMany(mappedBy = "product")
     private Long id;
 
     @Column(name = "product_name")
@@ -25,4 +25,10 @@ public class Product {
 
     @Column(name = "price")
     private double price;
+
+    @OneToMany(mappedBy = "product")
+    private List<ShopProduct> productsInShop;
+
+    @OneToMany(mappedBy = "product")
+    private List<ShopProduct> productsInOrder;
 }

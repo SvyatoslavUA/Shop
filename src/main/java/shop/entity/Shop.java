@@ -1,10 +1,11 @@
 package shop.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -13,7 +14,6 @@ import javax.persistence.*;
 @Entity(name = "Shop")
 public class Shop {
     @Id
-    @OneToMany(mappedBy = "shop")
     private Long id;
 
     @Column(name = "shop_name")
@@ -29,6 +29,9 @@ public class Shop {
     private String workingDays;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "shop_owner", referencedColumnName = "id")
+    @JoinColumn(name = "shop_owner_id", referencedColumnName = "id")
     private User shopOwner;
+
+    @OneToMany(mappedBy = "shop")
+    private List<Order> order;
 }

@@ -1,10 +1,11 @@
 package shop.service;
-import shop.dto.ShopDTO;
-import shop.dto.UserDTO;
 
-import java.util.List;
+import shop.dto.ShopDTO;
 
 public interface ShopService {
-    ShopDTO getShopForOwner(UserDTO userDTO);
-    ShopDTO updateShopInformation(ShopDTO shopDTO, Long userId);
+    ShopDTO getShopForOwner(Long userId, String password);
+
+    ShopDTO saveShop(final ShopDTO shopDTO);
+
+    ShopDTO updateShopInformation(ShopDTO shopDTO, String password);
 }

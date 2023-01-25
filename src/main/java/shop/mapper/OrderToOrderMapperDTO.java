@@ -20,20 +20,13 @@ public class OrderToOrderMapperDTO {
     }
 
 
-//    public Order toEntity(final OrderDTO orderDTO){
-//        final Order order = new Order();
-//
-//        order.setCourierId(orderDTO.getCourierId());
-////        order.setOrderedProductWithAmount(orderProductRepository.findAllByIdIn(orderDTO.getOrderedProductWithAmount()));
-//        order.setId(orderDTO.getId());
-//        order.setStatus(orderDTO.getStatus());
-//        order.setShippingAddress(orderDTO.getShippingAddress());
-//        order.setCustomerId(orderDTO.getCustomerId());
-//        order.setShopId(orderDTO.getShopId());
-//        order.setTotalAmount(orderDTO.getTotalAmount());
-//
-//        return order;
-//    }
+    public Order toEntity(final OrderDTO orderDTO){
+        final Order order = new Order();
+
+        order.setShippingAddress(orderDTO.getShippingAddress());
+
+        return order;
+    }
 
     public OrderDTO toDTO(final Order order){
         final OrderDTO orderDTO = new OrderDTO();

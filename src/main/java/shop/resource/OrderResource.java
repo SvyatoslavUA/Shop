@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import shop.dto.AssignmentDTO;
 import shop.dto.OrderDTO;
-import shop.dto.UserDTO;
 import shop.service.OrderService;
 
 import java.util.List;
@@ -34,5 +33,10 @@ public class OrderResource {
     @PutMapping("/assign")
     public OrderDTO assignCourierToOrder(@RequestBody AssignmentDTO assignmentDTO) {
         return orderService.assignCourierToOrder(assignmentDTO.getCourierId(), assignmentDTO.getOrderId());
+    }
+
+    @PutMapping("/customer/{userId}/{orderDTO}")
+    public OrderDTO updateOrderInformation(@PathVariable final OrderDTO orderDTO, @PathVariable final Long userId){
+        return orderService.updateOrderInformation(orderDTO, userId);
     }
 }

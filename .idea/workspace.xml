@@ -4,24 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="Added associations, and controller">
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/dto/AssignmentDTO.java" afterDir="false" />
+    <list default="true" id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="Fixed associations">
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/ProductResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/ShopResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/UserResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/OrderProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/OrderProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/OrderProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/OrderProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderToOrderMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderToOrderMapperDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/OrderResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673784689977</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed associations">
+      <created>1673793080010</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673793080010</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +175,7 @@
     <MESSAGE value="Fixed orders" />
     <MESSAGE value="Added associations" />
     <MESSAGE value="Added associations, and controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added associations, and controller" />
+    <MESSAGE value="Fixed associations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed associations" />
   </component>
 </project>

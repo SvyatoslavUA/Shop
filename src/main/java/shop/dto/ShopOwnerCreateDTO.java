@@ -3,28 +3,23 @@ package shop.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import shop.entity.User;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class ShopDTO {
-//    @NotNull
-    private Long id;
+@NoArgsConstructor
+public class ShopOwnerCreateDTO extends UserDTO{
+    private String shopName;
 
-//    @NotNull
-//    @NotBlank
-    private String name;
-
-//    @NotNull
+    //    @NotNull
 //    @NotBlank
     private String address;
 
-//    @NotBlank
+    //    @NotBlank
 //    @Min(1)
     private double workingHours;
 
-//    @NotBlank
+    //    @NotBlank
 //    @Min(1)
     private String workingDays;
 }

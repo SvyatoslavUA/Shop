@@ -17,16 +17,16 @@ public class OrderDTO {
     private Long id;
 
 //    @NotNull
-    private User customerId;
+    private Long customerId;
 
     //    @NotNull
     private List<OrderProductDTO> orderedProductWithAmount;
 
 //    @NotNull
-    private Shop shopId;
+    private Long shopId;
 
 //    @NotNull
-    private User courierId;
+    private Long courierId;
 
 //    @NotNull
     private String shippingAddress;

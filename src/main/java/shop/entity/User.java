@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import shop.entity.enumeration.EmployeeRole;
+import shop.entity.enumeration.UserRole;
 
 import java.util.List;
 
@@ -29,8 +29,8 @@ public class User {
     private String password;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "employee_role")
-    private EmployeeRole employeeRole;
+    @Column(name = "role")
+    private UserRole role;
 
 
     @OneToOne(mappedBy = "shopOwner")

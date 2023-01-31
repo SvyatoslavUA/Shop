@@ -12,8 +12,8 @@ public class ShopResource {
     private ShopService shopService;
 
     @GetMapping("/shop-owner")
-    public ShopDTO getShopForOwner(@PathVariable Long userId, String password) {
-        return shopService.getShopForOwner(userId, password);
+    public ShopDTO getShopForOwner(@PathVariable Long userId) {
+        return shopService.getShopForOwner(userId);
     }
 
     @PutMapping("/save")
@@ -22,7 +22,7 @@ public class ShopResource {
     }
 
     @PutMapping("/update/{password}")
-    public ShopDTO updateShopInformation(@RequestBody ShopDTO shopDTO, @PathVariable String password) {
-        return shopService.updateShopInformation(shopDTO, password);
+    public ShopDTO updateShopInformation(@RequestBody ShopDTO shopDTO) {
+        return shopService.updateShopInformation(shopDTO);
     }
 }

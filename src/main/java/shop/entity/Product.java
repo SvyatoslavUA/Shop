@@ -17,8 +17,8 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "product_name")
-    private String productName;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "description")
     private String description;
@@ -30,5 +30,5 @@ public class Product {
     private List<ShopProduct> productsInShop;
 
     @OneToMany(mappedBy = "product")
-    private List<ShopProduct> productsInOrder;
+    private List<OrderProduct> productsInOrder;
 }

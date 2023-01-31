@@ -10,11 +10,12 @@ import shop.entity.Product;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderProductDTO {
+    private Long Id;
 //    @NotNull
-    private Order orderId;
+    private Long orderId;
 
 //    @NotNull
-    private Product productId;
+    private Long productId;
 
 //    @NotBlank
 //    @Min(1)

@@ -14,10 +14,11 @@ import java.util.List;
 @Entity(name = "Shop")
 public class Shop {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "shop_name")
-    private String shopName;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "address")
     private String address;
@@ -34,4 +35,7 @@ public class Shop {
 
     @OneToMany(mappedBy = "shop")
     private List<Order> order;
+
+    @OneToMany(mappedBy = "product")
+    private List<ShopProduct> shopHasProducts;
 }

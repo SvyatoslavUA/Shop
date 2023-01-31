@@ -1,6 +1,6 @@
 package shop.entity.enumeration;
 
-public enum EmployeeRole {
+public enum UserRole {
     CUSTOMER,
     SHOP_OWNER,
     COURIER;

@@ -4,7 +4,7 @@ package shop.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import shop.entity.enumeration.EmployeeRole;
+import shop.entity.enumeration.UserRole;
 
 @Data
 @NoArgsConstructor
@@ -27,5 +27,5 @@ public class UserDTO {
 
 //    @NotNull
 //    @NotBlank
-    private EmployeeRole employeeRole;
+    private UserRole role;
 }

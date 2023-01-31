@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import shop.dto.OrderDTO;
 import shop.entity.Order;
 import shop.entity.User;
-import shop.entity.enumeration.EmployeeRole;
+import shop.entity.enumeration.UserRole;
 import shop.entity.enumeration.Status;
 import shop.exeption.ServiceException;
 import shop.mapper.OrderToOrderMapperDTO;
@@ -36,7 +36,7 @@ public class OrderServiceImpl implements OrderService {
 
     public List<OrderDTO> getAllOrdersForShopOwner(final Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
-        if (user.getEmployeeRole() != EmployeeRole.SHOP_OWNER) {
+        if (user.getRole() != UserRole.SHOP_OWNER) {
             throw new ServiceException(400, "!!!");
         }
         return orderRepository.getAllOrdersForCustomer(userId).stream()
@@ -46,18 +46,18 @@ public class OrderServiceImpl implements OrderService {
 
     public List<OrderDTO> getAvailableOrdersCourier(final Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
-        if (user.getEmployeeRole() != EmployeeRole.COURIER) {
+        if (user.getRole() != UserRole.COURIER) {
             throw new ServiceException(400, "!!!");
         }
         return orderRepository.getAvailableOrdersCourier().stream()
                 .map(orderToOrderMapperDTO::toDTO).collect(Collectors.toList());
     }
 
-    public OrderDTO assignCourierToOrder(final Long userId, final Long orderId) {
-        User courier = userRepository.getUserById(userId);
-        Order order = orderRepository.getOrderById(orderId);
+    public OrderDTO assignCourierToOrder(final Long courierId, final Long orderId) {
+        User courier = userRepository.findById(courierId).orElseThrow(() -> new ServiceException(400, "!!!"));
+        Order order = orderRepository.findById(orderId).orElseThrow(() -> new ServiceException(400, "!!!"));
 
-        if (courier.getEmployeeRole() != EmployeeRole.COURIER) {
+        if (courier.getRole() != UserRole.COURIER) {
             throw new ServiceException(400, "You are not courier!!!");
         }
 
@@ -76,7 +76,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     public OrderDTO updateOrderInformation(OrderDTO orderDTO, Long userId) {
-        User user = userRepository.getUserById(userId);
+        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
 
         if (!Objects.equals(orderDTO.getCustomerId().getId(), user.getId())) {
             throw new RuntimeException("You are not the customer of this order!");

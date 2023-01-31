@@ -2,6 +2,7 @@ package shop.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import shop.dto.ShopOwnerCreateDTO;
 import shop.dto.UserDTO;
 import shop.service.UserService;
 
@@ -12,8 +13,13 @@ public class UserResource {
     private UserService userService;
 
     @GetMapping("/user")
-    public UserDTO getUser(@PathVariable Long userId, @PathVariable String password){
-        return userService.getUser(userId, password);
+    public UserDTO getUser(@PathVariable Long userId){
+        return userService.getUser(userId);
+    }
+
+    @PutMapping("/create")
+    public UserDTO createShopOwnerAndShop(@RequestBody ShopOwnerCreateDTO shopOwnerCreateDTO){
+        return userService.createShopOwnerAndShop(shopOwnerCreateDTO);
     }
 
     @PutMapping("/save")
@@ -22,8 +28,8 @@ public class UserResource {
     }
 
     @PutMapping("/update/{userId}/{password}")
-    public UserDTO updateUserInformation(@PathVariable Long userId, @PathVariable String password){
-        return userService.updateUserInformation(userId, password);
+    public UserDTO updateUserInformation(@RequestBody UserDTO userDTO){
+        return userService.updateUserInformation(userDTO);
     }
 }
 

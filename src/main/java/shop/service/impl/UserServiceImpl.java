@@ -1,17 +1,20 @@
 package shop.service.impl;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import shop.dto.ShopOwnerCreateDTO;
 import shop.dto.UserDTO;
+import shop.entity.Shop;
 import shop.entity.User;
 import shop.exeption.ServiceException;
 import shop.mapper.UserToUserMapperDTO;
+import shop.repositiry.ShopRepository;
 import shop.repositiry.UserRepository;
 import shop.service.UserService;
 
-import java.util.Objects;
-
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserToUserMapperDTO userToUserMapperDTO;
@@ -19,11 +22,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public UserDTO getUser(Long userId, String password) {
-        if(!Objects.equals(userRepository.getUserById(userId).getPassword(), password)){
-            throw new RuntimeException("Password is wrong!");
-        }
+    @Autowired
+    private ShopRepository shopRepository;
 
+    public UserDTO getUser(Long userId) {
         return userToUserMapperDTO.toDTO(userRepository.findById(userId)
                 .orElseThrow(() -> new ServiceException(400, "User with id not found: " + userId, "")));
     }
@@ -37,22 +39,27 @@ public class UserServiceImpl implements UserService {
         return userToUserMapperDTO.toDTO(user);
     }
 
-    public UserDTO updateUserInformation(Long userId, String password){
-        User user = userRepository.getUserById(userId);
+    public UserDTO createShopOwnerAndShop(final ShopOwnerCreateDTO shopOwnerCreateDTO) {
+        final User user = new User();
+        final Shop shop = new Shop();
 
-        final User savedUser = userRepository.findById(user.getId())
-                .orElseThrow(() -> new ServiceException(400, "User with id not found: " + userId, ""));
+        user.setShop(shop);
+        shop.setShopOwner(user);
 
-        if(!Objects.equals(userRepository.getUserById(userId).getPassword(), password)){
-            throw new RuntimeException("Password is wrong!");
-        }
+        shopRepository.save(shop);
+        userRepository.save(user);
 
-        savedUser.setPassword(user.getPassword());
-        savedUser.setSurname(user.getSurname());
-        savedUser.setName(user.getName());
+        return userToUserMapperDTO.toDTO(user);
+    }
+
+    public UserDTO updateUserInformation(UserDTO userDTO){
+        final User savedUser = userRepository.findById(userDTO.getId())
+                .orElseThrow(() -> new ServiceException(400, "User with id not found: " + userDTO.getId(), ""));
+
+        savedUser.setPassword(userDTO.getPassword());
+        savedUser.setSurname(userDTO.getSurname());
+        savedUser.setName(userDTO.getName());
 
         return userToUserMapperDTO.toDTO(userRepository.save(savedUser));
     }
-
-
 }

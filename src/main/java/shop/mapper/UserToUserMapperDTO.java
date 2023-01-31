@@ -10,7 +10,7 @@ public class UserToUserMapperDTO {
         final User user = new User();
 
         user.setId(userDTO.getId());
-        user.setEmployeeRole(userDTO.getEmployeeRole());
+        user.setEmployeeRole(userDTO.getUserRole());
         user.setName(userDTO.getName());
         user.setSurname(userDTO.getSurname());
         user.setPassword(userDTO.getPassword());
@@ -21,7 +21,7 @@ public class UserToUserMapperDTO {
     public UserDTO toDTO(final User user){
         final UserDTO userDTO = new UserDTO();
 
-        userDTO.setEmployeeRole(user.getEmployeeRole());
+        userDTO.setUserRole(user.getEmployeeRole());
         userDTO.setId(user.getId());
         userDTO.setName(user.getName());
         userDTO.setSurname(user.getSurname());

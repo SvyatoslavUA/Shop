@@ -4,8 +4,6 @@ package shop.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import shop.entity.Product;
-import shop.entity.Shop;
 
 
 @Data
@@ -14,10 +12,10 @@ import shop.entity.Shop;
 public class ShopProductDTO {
 
 //    @NotNull
-    private Product productId;
+    private Long productId;
 
 //    @NotNull
-    private Shop shopId;
+    private Long shopId;
 
 //    @NotNull
 //    @NotBlank

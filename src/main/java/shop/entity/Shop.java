@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.DayOfWeek;
 import java.util.List;
 
 @Data
@@ -23,11 +24,16 @@ public class Shop {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "working_hours")
-    private double workingHours;
+    @Column(name = "working_hours_start")
+    private String workingHoursStart;
 
+    @Column(name = "working_hours_end")
+    private String workingHoursEnd;
+
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "working_days")
-    private String workingDays;
+    private List<DayOfWeek> workingDays;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "shop_owner_id", referencedColumnName = "id")

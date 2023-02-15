@@ -32,14 +32,14 @@ public class OrderToOrderMapperDTO {
         final OrderDTO orderDTO = new OrderDTO();
 
         orderDTO.setTotalAmount(order.getTotalAmount());
-        orderDTO.setCourierId(order.getCourier());
+        orderDTO.setCourierId(order.getCourier().getId());
         orderDTO.setId(order.getId());
 
         orderDTO.setOrderedProductWithAmount(orderProductToOrderProductMapperDTO.toDTO(order.getOrderedProductWithAmount()));
-        orderDTO.setCustomerId(order.getCustomer());
+        orderDTO.setCustomerId(order.getCustomer().getId());
         orderDTO.setShippingAddress(order.getShippingAddress());
         orderDTO.setStatus(order.getStatus());
-        orderDTO.setShopId(order.getShop());
+        orderDTO.setShopId(order.getShop().getId());
 
         return orderDTO;
     }

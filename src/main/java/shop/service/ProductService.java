@@ -1,12 +1,13 @@
 package shop.service;
 
 import shop.dto.ProductDTO;
+import shop.dto.ShopProductDTO;
 
 import java.util.List;
 
 public interface ProductService {
     List<ProductDTO> getAllProductsForShopOwner(Long userId);
-    ProductDTO getProductById(Long productId);
+    List<ShopProductDTO> getProductById(Long productId);
     ProductDTO addProducts(ProductDTO productDTO);
-    List<ProductDTO> getAllProductsForCustomer();
+    List<ShopProductDTO> getAllProductsForCustomer();
 }

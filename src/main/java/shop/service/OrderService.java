@@ -1,6 +1,7 @@
 package shop.service;
 
 import shop.dto.OrderDTO;
+import shop.entity.enumeration.Status;
 
 import java.util.List;
 
@@ -10,4 +11,6 @@ public interface OrderService {
     OrderDTO assignCourierToOrder(Long userId, Long orderId);
     List<OrderDTO> getAvailableOrdersCourier(Long userId);
     OrderDTO updateOrderInformation(OrderDTO orderDTO, Long userId);
+    OrderDTO updateStatusForOwner(Long orderId, Long userId, Status status);
+    OrderDTO completeOrder(Long orderId, Long userId);
 }

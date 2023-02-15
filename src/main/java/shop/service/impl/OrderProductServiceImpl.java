@@ -33,10 +33,13 @@ public class OrderProductServiceImpl implements OrderProductService {
         final Product product = productRepository.findById(orderProductDTO.getProductId())
                 .orElseThrow(() -> new ServiceException(400, "Product with id not found: " + orderProductDTO.getProductId(), ""));
 
+        final int amount = orderProductDTO.getAmount();
+
         if (orderProduct == null) {
             orderProduct = new OrderProduct();
             orderProduct.setOrder(order);
             orderProduct.setProduct(product);
+            orderProduct.setAmount(amount);
 
             order.getOrderedProductWithAmount().add(orderProduct);
             product.getProductsInOrder().add(orderProduct);

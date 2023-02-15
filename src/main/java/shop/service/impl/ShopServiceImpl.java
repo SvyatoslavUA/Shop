@@ -11,6 +11,14 @@ import shop.repositiry.ShopRepository;
 import shop.repositiry.UserRepository;
 import shop.service.ShopService;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 @Service
 @Transactional
 public class ShopServiceImpl implements ShopService {
@@ -41,10 +49,40 @@ public class ShopServiceImpl implements ShopService {
                 .orElseThrow(() -> new ServiceException(400, "Shop with id not found: " + shopDTO.getId(), ""));
 
         savedShop.setName(shopDTO.getName());
-        savedShop.setWorkingHours(shopDTO.getWorkingHours());
+        savedShop.setWorkingHoursStart(shopDTO.getWorkingHoursStart());
+        savedShop.setWorkingHoursEnd(shopDTO.getWorkingHoursEnd());
         savedShop.setWorkingDays(shopDTO.getWorkingDays());
         savedShop.setAddress(shopDTO.getAddress());
 
         return shopToShopMapperDTO.toDTO(shopRepository.save(savedShop));
     }
+
+    public List<ShopDTO> findOpenedShops(){
+        List<ShopDTO> shops = shopRepository.findAll().stream()
+                .map(shopToShopMapperDTO::toDTO).toList();
+
+        DateTimeFormatter dtfForTime = DateTimeFormatter.ofPattern("HH:mm",  Locale.ENGLISH);
+
+        List<ShopDTO> openedShopsList = new ArrayList<>();
+
+        for(ShopDTO openedShops : shops){
+            LocalTime shopTimeStart = LocalTime.parse(openedShops.getWorkingHoursStart(), dtfForTime);
+            LocalTime shopTimeEnd = LocalTime.parse(openedShops.getWorkingHoursEnd(), dtfForTime);
+
+            if(!LocalTime.now().isAfter(shopTimeStart) && LocalTime.now().isBefore(shopTimeEnd) ){
+                continue;
+            }
+
+            for(DayOfWeek day : openedShops.getWorkingDays()) {
+                if(LocalDate.now().getDayOfWeek() != day){
+                    continue;
+                }
+            }
+
+            openedShopsList.add(openedShops);
+        }
+
+        return openedShopsList;
+    }
+
 }

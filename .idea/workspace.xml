@@ -4,38 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="Added few resources and added methods to services">
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopOwnerCreateDTO.java" afterDir="false" />
+    <list default="true" id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="Added ShopProduct, OrderProduct and fixed bugs">
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/OrderProductResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/ShopProductResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/OrderProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/OrderProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/OrderProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/OrderProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/enumeration/EmployeeRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/enumeration/UserRole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderProductToOrderProductMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderProductToOrderProductMapperDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/UserToUserMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/UserToUserMapperDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/OrderProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/OrderProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderToOrderMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderToOrderMapperDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopToShopMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopToShopMapperDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/OrderResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/ProductResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/ProductResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/ShopResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/ShopResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/UserResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/OrderProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/OrderProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/ShopProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/ShopProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674657075767</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added ShopProduct, OrderProduct and fixed bugs">
+      <created>1675159253582</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1675159253582</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,6 +199,7 @@
     <MESSAGE value="Added associations, and controller" />
     <MESSAGE value="Fixed associations" />
     <MESSAGE value="Added few resources and added methods to services" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added few resources and added methods to services" />
+    <MESSAGE value="Added ShopProduct, OrderProduct and fixed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ShopProduct, OrderProduct and fixed bugs" />
   </component>
 </project>

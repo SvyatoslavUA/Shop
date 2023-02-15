@@ -12,7 +12,7 @@ public class UserResource {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/user")
+    @GetMapping("/user/{userId}")
     public UserDTO getUser(@PathVariable Long userId){
         return userService.getUser(userId);
     }
@@ -27,7 +27,7 @@ public class UserResource {
         return userService.saveUser(userDTO);
     }
 
-    @PutMapping("/update/{userId}/{password}")
+    @PutMapping("/update")
     public UserDTO updateUserInformation(@RequestBody UserDTO userDTO){
         return userService.updateUserInformation(userDTO);
     }

@@ -37,7 +37,7 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderDTO> getAllOrdersForShopOwner(final Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
         if (user.getRole() != UserRole.SHOP_OWNER) {
-            throw new ServiceException(400, "!!!");
+            throw new ServiceException(400, "You are not shop owner!!!");
         }
         return orderRepository.getAllOrdersForCustomer(userId).stream()
                 .filter(e -> Objects.equals(e.getShop().getShopOwner().getId(), userId))
@@ -47,7 +47,7 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderDTO> getAvailableOrdersCourier(final Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
         if (user.getRole() != UserRole.COURIER) {
-            throw new ServiceException(400, "!!!");
+            throw new ServiceException(400, "You are not courier!!!");
         }
         return orderRepository.getAvailableOrdersCourier().stream()
                 .map(orderToOrderMapperDTO::toDTO).collect(Collectors.toList());
@@ -78,7 +78,7 @@ public class OrderServiceImpl implements OrderService {
     public OrderDTO updateOrderInformation(OrderDTO orderDTO, Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
 
-        if (!Objects.equals(orderDTO.getCustomerId().getId(), user.getId())) {
+        if (!Objects.equals(orderDTO.getCustomerId(), user.getId())) {
             throw new RuntimeException("You are not the customer of this order!");
         }
 
@@ -90,4 +90,37 @@ public class OrderServiceImpl implements OrderService {
         return orderToOrderMapperDTO.toDTO(orderRepository.save(savedOrder));
     }
 
+    public OrderDTO updateStatusForOwner(Long orderId, Long userId, Status status) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
+        if (user.getRole() != UserRole.SHOP_OWNER) {
+            throw new ServiceException(400, "You are not shop owner!!!");
+        }
+
+        final Order savedOrder = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ServiceException(400, "Order with id not found: " + orderId, ""));
+
+        if(status != Status.IN_PROCESSING && status != Status.READY_TO_DELIVER){
+            throw new RuntimeException("Status must be IN_PROCESSING or READY_TO_DELIVER!");
+        }
+
+        savedOrder.setStatus(status);
+        orderRepository.save(savedOrder);
+
+        return orderToOrderMapperDTO.toDTO(savedOrder);
+    }
+
+    public OrderDTO completeOrder(Long orderId, Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
+        if (user.getRole() != UserRole.COURIER) {
+            throw new ServiceException(400, "You are not courier!!!");
+        }
+
+        final Order savedOrder = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ServiceException(400, "Order with id not found: " + orderId, ""));
+
+        savedOrder.setStatus(Status.COMPLETED);
+        orderRepository.save(savedOrder);
+
+        return orderToOrderMapperDTO.toDTO(savedOrder);
+    }
 }

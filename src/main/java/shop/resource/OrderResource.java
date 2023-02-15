@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import shop.dto.AssignmentDTO;
 import shop.dto.OrderDTO;
+import shop.entity.enumeration.Status;
 import shop.service.OrderService;
 
 import java.util.List;
@@ -35,8 +36,18 @@ public class OrderResource {
         return orderService.assignCourierToOrder(assignmentDTO.getCourierId(), assignmentDTO.getOrderId());
     }
 
-    @PutMapping("/customer/{userId}/{orderDTO}")
+    @PutMapping("/update-order-customer/{userId}/{orderDTO}")
     public OrderDTO updateOrderInformation(@PathVariable final OrderDTO orderDTO, @PathVariable final Long userId){
         return orderService.updateOrderInformation(orderDTO, userId);
+    }
+
+    @PutMapping("/update-status-owner/{orderId}/{userId}/{status}")
+    public OrderDTO updateStatusForOwner(@PathVariable final Long orderId, @PathVariable final Long userId, @PathVariable Status status){
+        return orderService.updateStatusForOwner(orderId, userId, status);
+    }
+
+    @PutMapping("/complete-order-courier/{orderId}/{userId}")
+    public OrderDTO completeOrder(@PathVariable final Long orderId, @PathVariable final Long userId){
+        return orderService.completeOrder(orderId, userId);
     }
 }

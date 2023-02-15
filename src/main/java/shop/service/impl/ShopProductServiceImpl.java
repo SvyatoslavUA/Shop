@@ -24,54 +24,27 @@ public class ShopProductServiceImpl implements ShopProductService {
     @Autowired
     private ShopProductToShopProductMapperDTO shopProductToShopProductMapperDTO;
 
-    public ShopProductDTO enableSelling(Long shopId, Long productId){
-        Shop shop = shopRepository
-                .findById(shopId).orElseThrow(() -> new ServiceException(400, "Shop with id not found: " + shopId, ""));
-        Product product = productRepository
-                .findById(productId).orElseThrow(() -> new ServiceException(400, "Product with id not found: " + productId, ""));
-
-        ShopProduct shopProduct = shopProductRepository.getShopProductByProductId(productId);
-
-        if(shopProduct.isAvailableForOrdering()){
-            throw new RuntimeException("Product already enabled!");
-        }
-
-        if (shopProduct == null) {
-            shopProduct = new ShopProduct();
-            shopProduct.setShop(shop);
-            shopProduct.setProduct(product);
-            shopProduct.setAvailableForOrdering(true);
-
-            shop.getShopHasProducts().add(shopProduct);
-            product.getProductsInShop().add(shopProduct);
-
-            shopRepository.save(shop);
-            productRepository.save(product);
-        } else {
-            shopProduct.setAvailableForOrdering(true);
-        }
-
-        shopProductRepository.save(shopProduct);
-
-        return shopProductToShopProductMapperDTO.toDTO(shopProduct);
+    public ShopProductDTO enableSelling(Long shopId, Long productId) {
+       return setAvailabilitySelling(shopId, productId, true);
     }
-    public ShopProductDTO disableSelling(Long shopId, Long productId){
+
+    public ShopProductDTO disableSelling(Long shopId, Long productId) {
+        return setAvailabilitySelling(shopId, productId, false);
+    }
+
+    private ShopProductDTO setAvailabilitySelling(Long shopId, Long productId, boolean availability) {
         Shop shop = shopRepository
                 .findById(shopId).orElseThrow(() -> new ServiceException(400, "Shop with id not found: " + shopId, ""));
         Product product = productRepository
                 .findById(productId).orElseThrow(() -> new ServiceException(400, "Product with id not found: " + productId, ""));
 
-        ShopProduct shopProduct = shopProductRepository.getShopProductByProductId(productId);
-
-        if(shopProduct.isAvailableForOrdering()){
-            throw new RuntimeException("Product already disabled!");
-        }
+        ShopProduct shopProduct = shopProductRepository.getShopProductByProductIdAndShopId(productId, shopId);
 
         if (shopProduct == null) {
             shopProduct = new ShopProduct();
             shopProduct.setShop(shop);
             shopProduct.setProduct(product);
-            shopProduct.setAvailableForOrdering(false);
+            shopProduct.setAvailableForOrdering(availability);
 
             shop.getShopHasProducts().add(shopProduct);
             product.getProductsInShop().add(shopProduct);
@@ -79,7 +52,7 @@ public class ShopProductServiceImpl implements ShopProductService {
             shopRepository.save(shop);
             productRepository.save(product);
         } else {
-            shopProduct.setAvailableForOrdering(false);
+            shopProduct.setAvailableForOrdering(availability);
         }
 
         shopProductRepository.save(shopProduct);

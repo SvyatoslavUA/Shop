@@ -23,4 +23,6 @@ public class ProductDTO {
 //    @NotBlank
 //    @Min(1)
     private double price;
+
+
 }

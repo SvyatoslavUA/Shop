@@ -3,6 +3,7 @@ package shop.resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import shop.dto.ProductDTO;
+import shop.dto.ShopProductDTO;
 import shop.service.ProductService;
 
 import java.util.List;
@@ -14,13 +15,13 @@ public class ProductResource {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/shop-owner")
+    @GetMapping("/shop-owner/{userId}")
     public List<ProductDTO> getAllProductsForShopOwner(@PathVariable Long userId){
         return productService.getAllProductsForShopOwner(userId);
     }
 
-    @GetMapping("/user")
-    public ProductDTO getProductById(@PathVariable Long productId){
+    @GetMapping("/user/{productId}")
+    public List<ShopProductDTO> getProductById(@PathVariable Long productId){
         return productService.getProductById(productId);
     }
 
@@ -29,8 +30,8 @@ public class ProductResource {
         return productService.addProducts(productDTO);
     }
 
-    @GetMapping("/customer")
-    public List<ProductDTO> getAllProductsForCustomer(){
+    @GetMapping("/available-products")
+    public List<ShopProductDTO> getAllProductsForCustomer(){
         return productService.getAllProductsForCustomer();
     }
 }

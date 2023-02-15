@@ -5,4 +5,5 @@ import shop.dto.UserDTO;
 
 public interface OrderProductService {
     OrderProductDTO setAmount(OrderProductDTO orderProductDTO);
+    void delete(Long id);
 }

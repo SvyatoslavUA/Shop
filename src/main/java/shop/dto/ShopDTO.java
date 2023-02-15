@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.DayOfWeek;
+import java.util.List;
+
 
 @Data
 @NoArgsConstructor
@@ -22,9 +25,12 @@ public class ShopDTO {
 
 //    @NotBlank
 //    @Min(1)
-    private double workingHours;
+    private String workingHoursStart;
+    private String workingHoursEnd;
 
 //    @NotBlank
 //    @Min(1)
-    private String workingDays;
+    private List<DayOfWeek> workingDays;
+
+    private Long shopOwner;
 }

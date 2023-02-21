@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
         final User user = new User();
         final Shop shop = new Shop();
 
-        user.setShop(shop);
+//        user.setShop(shop);
         shop.setShopOwner(user);
 
         shopRepository.save(shop);

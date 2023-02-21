@@ -66,17 +66,15 @@ public class ShopServiceImpl implements ShopService {
         List<ShopDTO> openedShopsList = new ArrayList<>();
 
         for(ShopDTO openedShops : shops){
-            LocalTime shopTimeStart = LocalTime.parse(openedShops.getWorkingHoursStart(), dtfForTime);
+            LocalTime shopTimeStart =  LocalTime.parse(openedShops.getWorkingHoursStart(), dtfForTime);
             LocalTime shopTimeEnd = LocalTime.parse(openedShops.getWorkingHoursEnd(), dtfForTime);
 
-            if(!LocalTime.now().isAfter(shopTimeStart) && LocalTime.now().isBefore(shopTimeEnd) ){
+            if(!LocalTime.now().isBefore(shopTimeStart) && LocalTime.now().isAfter(shopTimeEnd)){
                 continue;
             }
 
-            for(DayOfWeek day : openedShops.getWorkingDays()) {
-                if(LocalDate.now().getDayOfWeek() != day){
-                    continue;
-                }
+            if(LocalDate.now().getDayOfWeek() != openedShops.getWorkingDays()){
+                continue;
             }
 
             openedShopsList.add(openedShops);

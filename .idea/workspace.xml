@@ -4,31 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="Added ShopProduct, OrderProduct and fixed bugs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/OrderProductResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/ShopProductResource.java" afterDir="false" />
+    <list default="true" id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="Added few methods, also created few resources">
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/exeption/AuthEntryPointJwt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/payload/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/payload/request/SignupRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/payload/response/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/payload/response/MessageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserDetailsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/security/AuthTokenFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopOwnerCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopOwnerCreateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderProductToOrderProductMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderProductToOrderProductMapperDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderToOrderMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/OrderToOrderMapperDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/ProductToProductMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ProductToProductMapperDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopProductToShopProductMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopProductToShopProductMapperDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopToShopMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopToShopMapperDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/UserToUserMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/UserToUserMapperDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/OrderResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/ProductResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/ProductResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/ShopResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/ShopResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/OrderProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/OrderProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +82,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
   }
 }</component>
@@ -178,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675159253582</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added few methods, also created few resources">
+      <created>1676466082799</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676466082799</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,6 +218,7 @@
     <MESSAGE value="Fixed associations" />
     <MESSAGE value="Added few resources and added methods to services" />
     <MESSAGE value="Added ShopProduct, OrderProduct and fixed bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ShopProduct, OrderProduct and fixed bugs" />
+    <MESSAGE value="Added few methods, also created few resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added few methods, also created few resources" />
   </component>
 </project>

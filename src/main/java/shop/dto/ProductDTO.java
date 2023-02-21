@@ -14,7 +14,7 @@ public class ProductDTO {
 
 //    @NotNull
 //    @NotBlank
-    private String productName;
+    private String name;
 
 //    @NotNull
 //    @NotBlank

@@ -8,6 +8,6 @@ import shop.entity.Shop;
 
 @Repository
 public interface ShopRepository extends JpaRepository<Shop, Long> {
-    @Query(value = "SELECT * FROM shop o WHERE o.shopOwner.id = :userId")
+    @Query(value = "SELECT * FROM shop WHERE shop_owner_id = :userId", nativeQuery = true)
     Shop getShopForShopOwner(@Param("userId") Long userId);
 }

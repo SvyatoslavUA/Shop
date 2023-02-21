@@ -67,7 +67,7 @@ public class OrderServiceImpl implements OrderService {
 
         order.setStatus(Status.DELIVERING);
         order.setCourier(courier);
-        courier.getDelivered().add(order);
+//        courier.getDelivered().add(order);
 
         orderRepository.save(order);
         userRepository.save(courier);

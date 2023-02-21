@@ -13,6 +13,8 @@ public class UserDTO {
 //    @NotNull
     private Long id;
 
+    private String email;
+
 //    @NotNull
 //    @NotBlank
     private String name;

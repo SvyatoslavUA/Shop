@@ -9,11 +9,11 @@ public class UserToUserMapperDTO {
     public User toEntity(final UserDTO userDTO){
         final User user = new User();
 
-        user.setId(userDTO.getId());
-        user.setEmployeeRole(userDTO.getUserRole());
+        user.setRole(userDTO.getRole());
         user.setName(userDTO.getName());
         user.setSurname(userDTO.getSurname());
         user.setPassword(userDTO.getPassword());
+        user.setEmail(userDTO.getEmail());
 
         return user;
     }
@@ -21,11 +21,11 @@ public class UserToUserMapperDTO {
     public UserDTO toDTO(final User user){
         final UserDTO userDTO = new UserDTO();
 
-        userDTO.setUserRole(user.getEmployeeRole());
-        userDTO.setId(user.getId());
+        userDTO.setRole(user.getRole());
         userDTO.setName(user.getName());
         userDTO.setSurname(user.getSurname());
         userDTO.setPassword(user.getPassword());
+        userDTO.setEmail(user.getEmail());
 
         return userDTO;
     }

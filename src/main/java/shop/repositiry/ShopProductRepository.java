@@ -16,6 +16,6 @@ public interface ShopProductRepository extends JpaRepository<ShopProduct, Long> 
     @Query(value = "SELECT o FROM ShopProduct o WHERE o.availableForOrdering = ?true", nativeQuery = true)
     List<ShopProduct> getAvailableProducts();
 
-    @Query(value = "SELECT o FROM ShopProduct o WHERE o.availableForOrdering = ?true AND o.productId = :productId", nativeQuery = true)
+    @Query(value = "SELECT o FROM ShopProduct o WHERE o.availableForOrdering = true AND o.productId = :productId", nativeQuery = true)
     List<ShopProduct> getAvailableProductsById(@Param("productId") Long productId);
 }

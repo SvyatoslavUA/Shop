@@ -30,10 +30,11 @@ public class Shop {
     @Column(name = "working_hours_end")
     private String workingHoursEnd;
 
-
     @Enumerated(EnumType.STRING)
     @Column(name = "working_days")
-    private List<DayOfWeek> workingDays;
+    private DayOfWeek workingDays;
+
+
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "shop_owner_id", referencedColumnName = "id")
@@ -42,6 +43,6 @@ public class Shop {
     @OneToMany(mappedBy = "shop")
     private List<Order> order;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "shop")
     private List<ShopProduct> shopHasProducts;
 }

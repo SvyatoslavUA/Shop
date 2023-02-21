@@ -30,7 +30,7 @@ public class ShopDTO {
 
 //    @NotBlank
 //    @Min(1)
-    private List<DayOfWeek> workingDays;
+    private DayOfWeek workingDays;
 
     private Long shopOwner;
 }

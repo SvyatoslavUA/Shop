@@ -4,8 +4,6 @@ package shop.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import shop.entity.Shop;
-import shop.entity.User;
 import shop.entity.enumeration.Status;
 
 import java.util.List;

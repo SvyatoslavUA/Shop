@@ -3,13 +3,15 @@ package shop.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import shop.entity.User;
+
+import java.time.DayOfWeek;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ShopOwnerCreateDTO extends UserDTO{
-    private String shopName;
+    private String name;
 
     //    @NotNull
 //    @NotBlank
@@ -17,9 +19,10 @@ public class ShopOwnerCreateDTO extends UserDTO{
 
     //    @NotBlank
 //    @Min(1)
-    private double workingHours;
+    private String workingHoursStart;
+    private String workingHoursEnd;
 
     //    @NotBlank
 //    @Min(1)
-    private String workingDays;
+    private List<DayOfWeek> workingDays;
 }

@@ -32,13 +32,16 @@ public class User {
     @Column(name = "role")
     private UserRole role;
 
+    @Column(name = "email")
+    private String email;
+
 
     @OneToOne(mappedBy = "shopOwner")
     private Shop shop;
 
-    @OneToMany(mappedBy = "courier")
+    @OneToMany(mappedBy = "courier", fetch = FetchType.LAZY)
     private List<Order> delivered;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     private List<Order> received;
 }

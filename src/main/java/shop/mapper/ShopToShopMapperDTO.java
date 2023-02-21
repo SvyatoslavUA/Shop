@@ -28,6 +28,7 @@ public class ShopToShopMapperDTO {
         shopDTO.setWorkingDays(shop.getWorkingDays());
         shopDTO.setWorkingHoursStart(shop.getWorkingHoursStart());
         shopDTO.setWorkingHoursEnd(shop.getWorkingHoursEnd());
+        shopDTO.setShopOwner(shopDTO.getShopOwner());
 
         return shopDTO;
     }

@@ -13,8 +13,7 @@ public class OrderProductToOrderProductMapperDTO {
     public OrderProduct toEntity(final OrderProductDTO orderProductDTO){
         final OrderProduct orderProduct = new OrderProduct();
 
-        orderProduct.setOrderId(orderProductDTO.getOrderId());
-        orderProduct.setProductId(orderProductDTO.getProductId());
+        orderProduct.setId(orderProduct.getId());
         orderProduct.setAmount(orderProductDTO.getAmount());
 
         return orderProduct;
@@ -24,15 +23,12 @@ public class OrderProductToOrderProductMapperDTO {
 
         final OrderProductDTO orderProductDTO = new OrderProductDTO();
 
-        orderProductDTO.setProductId(orderProduct.getProductId());
-        orderProductDTO.setOrderId(orderProduct.getOrderId());
+        orderProductDTO.setId(orderProductDTO.getId());
         orderProductDTO.setAmount(orderProduct.getAmount());
 
         return orderProductDTO;
     }
     public List <OrderProductDTO> toDTO(final List<OrderProduct> orderProduct){
-
-
 
         return orderProduct.stream().map(e -> this.toDTO(e)).collect(Collectors.toList());
     }

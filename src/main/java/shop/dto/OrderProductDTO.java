@@ -1,9 +1,5 @@
 package shop.dto;
 
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,15 +10,14 @@ import shop.entity.Product;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderProductDTO {
-    @Id
-    @NotNull
-    private Order orderId;
+    private Long Id;
+//    @NotNull
+    private Long orderId;
 
-    @Id
-    @NotNull
-    private Product productId;
+//    @NotNull
+    private Long productId;
 
-    @NotBlank
-    @Min(1)
+//    @NotBlank
+//    @Min(1)
     private int amount;
 }

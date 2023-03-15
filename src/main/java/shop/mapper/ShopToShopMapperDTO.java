@@ -9,11 +9,12 @@ public class ShopToShopMapperDTO {
     public Shop toEntity(final ShopDTO shopDTO){
         final Shop shop = new Shop();
 
-        shop.setShopName(shopDTO.getShopName());
+        shop.setName(shopDTO.getName());
         shop.setId(shopDTO.getId());
         shop.setAddress(shopDTO.getAddress());
         shop.setWorkingDays(shopDTO.getWorkingDays());
-        shop.setWorkingHours(shopDTO.getWorkingHours());
+        shop.setWorkingHoursStart(shopDTO.getWorkingHoursStart());
+        shop.setWorkingHoursEnd(shopDTO.getWorkingHoursEnd());
 
         return shop;
     }
@@ -21,11 +22,13 @@ public class ShopToShopMapperDTO {
     public ShopDTO toDTO(final Shop shop){
         final ShopDTO shopDTO = new ShopDTO();
 
-        shopDTO.setShopName(shop.getShopName());
+        shopDTO.setName(shop.getName());
         shopDTO.setAddress(shop.getAddress());
         shopDTO.setId(shop.getId());
         shopDTO.setWorkingDays(shop.getWorkingDays());
-        shopDTO.setWorkingHours(shop.getWorkingHours());
+        shopDTO.setWorkingHoursStart(shop.getWorkingHoursStart());
+        shopDTO.setWorkingHoursEnd(shop.getWorkingHoursEnd());
+        shopDTO.setShopOwner(shopDTO.getShopOwner());
 
         return shopDTO;
     }

@@ -1,34 +1,36 @@
 package shop.dto;
 
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.DayOfWeek;
+import java.util.List;
+
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ShopDTO {
-    @Id
-    @NotNull
+//    @NotNull
     private Long id;
 
-    @NotNull
-    @NotBlank
-    private String shopName;
+//    @NotNull
+//    @NotBlank
+    private String name;
 
-    @NotNull
-    @NotBlank
+//    @NotNull
+//    @NotBlank
     private String address;
 
-    @NotBlank
-    @Min(1)
-    private double workingHours;
+//    @NotBlank
+//    @Min(1)
+    private String workingHoursStart;
+    private String workingHoursEnd;
 
-    @NotBlank
-    @Min(1)
-    private String workingDays;
+//    @NotBlank
+//    @Min(1)
+    private DayOfWeek workingDays;
+
+    private Long shopOwner;
 }

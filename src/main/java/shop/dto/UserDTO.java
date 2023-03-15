@@ -1,34 +1,33 @@
 package shop.dto;
 
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import shop.entity.enumeration.EmployeeRole;
+import shop.entity.enumeration.UserRole;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDTO {
-    @Id
-    @NotNull
+//    @NotNull
     private Long id;
 
-    @NotNull
-    @NotBlank
+    private String email;
+
+//    @NotNull
+//    @NotBlank
     private String name;
 
-    @NotNull
-    @NotBlank
+//    @NotNull
+//    @NotBlank
     private String surname;
 
-    @NotNull
-    @NotBlank
+//    @NotNull
+//    @NotBlank
     private String password;
 
-    @NotNull
-    @NotBlank
-    private EmployeeRole employeeRole;
+//    @NotNull
+//    @NotBlank
+    private UserRole role;
 }

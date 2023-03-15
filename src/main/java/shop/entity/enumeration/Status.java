@@ -4,5 +4,6 @@ public enum Status {
     OPENED,
     IN_PROCESSING,
     DELIVERING,
-    COMPLETED;
+    COMPLETED,
+    READY_TO_DELIVER;
 }

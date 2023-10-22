@@ -15,6 +15,10 @@ public class OrderResource {
     @Autowired
     private OrderService orderService;
 
+    @PutMapping("/customer/create-order/{productId}/{amount}/{userId}")
+    public OrderDTO createOrderWithProduct(@PathVariable List<Long> productId, @PathVariable int amount, @PathVariable Long userId){
+        return orderService.createOrderWithProduct(productId, amount, userId);
+    }
 
     @GetMapping("/customer/{userId}")
     public List<OrderDTO> getAllOrdersForCustomer(@PathVariable final Long userId) {

@@ -16,9 +16,6 @@ public class ShopProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "available_for_ordering")
-    private boolean availableForOrdering;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
@@ -26,4 +23,7 @@ public class ShopProduct {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "shop_id")
     private Shop shop;
+
+    @Column(name = "available_for_ordering")
+    private boolean availableForOrdering;
 }

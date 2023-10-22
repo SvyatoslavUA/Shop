@@ -13,9 +13,9 @@ import java.util.List;
 public interface OrderRepository extends JpaRepository<Order, Long> {
     Order getOrderById(Long ID);
 
-    @Query (value = "SELECT * FROM Orders o WHERE o.customerId = :userId", nativeQuery = true)
-    List <Order> getAllOrdersForCustomer(@Param("userId") Long userId);
+    @Query(value = "SELECT * FROM `order` WHERE customer_id = :userId", nativeQuery = true)
+    List<Order> getAllOrdersForCustomer(@Param("userId") Long userId);
 
-    @Query (value = "SELECT * FROM Orders o WHERE o.Status = ?READY_TO_DELIVER", nativeQuery = true)
-    List <Order> getAvailableOrdersCourier();
+    @Query(value = "SELECT * FROM `order` WHERE Status = 'READY_TO_DELIVER'", nativeQuery = true)
+    List<Order> getAvailableOrdersCourier();
 }

@@ -1,13 +1,13 @@
 package shop.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import shop.entity.enumeration.Material;
 
 import java.util.List;
 
-@Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "product")
@@ -26,9 +26,23 @@ public class Product {
     @Column(name = "price")
     private double price;
 
+    @Column(name = "guarantee")
+    private double guarantee;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "material")
+    private Material material;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "producer_id")
+    private Producer producer;
+
     @OneToMany(mappedBy = "product")
     private List<ShopProduct> productsInShop;
 
     @OneToMany(mappedBy = "product")
     private List<OrderProduct> productsInOrder;
+
+
 }

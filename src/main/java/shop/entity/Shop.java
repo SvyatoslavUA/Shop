@@ -34,8 +34,6 @@ public class Shop {
     @Column(name = "working_days")
     private DayOfWeek workingDays;
 
-
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "shop_owner_id", referencedColumnName = "id")
     private User shopOwner;

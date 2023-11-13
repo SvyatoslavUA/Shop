@@ -8,7 +8,7 @@ import shop.service.ProductService;
 
 import java.util.List;
 
-
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1/product")
 public class ProductResource {
@@ -31,7 +31,12 @@ public class ProductResource {
     }
 
     @GetMapping("/available-products")
-    public List<ShopProductDTO> getAllProductsForCustomer(){
+    public List<ProductDTO> getAllProductsForCustomer(){
         return productService.getAllProductsForCustomer();
+    }
+
+    @GetMapping("/best-product/{productIds}")
+    ProductDTO getBestProductFromEntered(@PathVariable List<Long> productIds){
+        return productService.getBestProductFromEntered(productIds);
     }
 }

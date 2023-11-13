@@ -4,41 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="Added few methods, also created few resources">
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/exeption/AuthEntryPointJwt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/payload/request/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/payload/request/SignupRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/payload/response/JwtResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/payload/response/MessageResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/resource/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserDetailsImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/shop/service/security/AuthTokenFilter.java" afterDir="false" />
+    <list default="true" id="407f0620-c105-4cc4-a929-0206ecc09011" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ProducerDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/entity/enumeration/Material.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ProducerToProducerMapperDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/OrderDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopOwnerCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopOwnerCreateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/dto/ShopProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/dto/ShopProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/ShopProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/ProductToProductMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ProductToProductMapperDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopProductToShopProductMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopProductToShopProductMapperDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopToShopMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/ShopToShopMapperDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/mapper/UserToUserMapperDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/mapper/UserToUserMapperDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/ShopRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/repositiry/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/repositiry/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/OrderResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/ProductResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/resource/ProductResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/resource/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ShopServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserDetailsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/shop/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,177 +44,82 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
-  <component name="ProjectId" id="2Jp63JoFNydB2qk6jGTiEhx2JCq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2WTkH4KZi5dcgh5NU5eUmTWrJOW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9f82518d468b9fee614fcc92f76bb163&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="shop.exeption" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn clean install" />
-      <command value="mvn dependency:tree" />
-    </option>
-  </component>
   <component name="RunManager">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="shop.Application" />
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Shop" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="shop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="shop.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Application" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a6e68422-1f99-4729-934d-7bad266eed46" name="Changes" comment="" />
-      <created>1672762478563</created>
+      <changelist id="407f0620-c105-4cc4-a929-0206ecc09011" name="Changes" comment="" />
+      <created>1696763868782</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1672762478563</updated>
+      <updated>1696763868782</updated>
+      <workItem from="1696763869865" duration="138000" />
+      <workItem from="1696764236732" duration="1178000" />
+      <workItem from="1697023215501" duration="18042000" />
+      <workItem from="1697182413544" duration="7630000" />
+      <workItem from="1697536066714" duration="1896000" />
+      <workItem from="1697707727962" duration="1063000" />
+      <workItem from="1697709219404" duration="4117000" />
+      <workItem from="1697976004254" duration="21287000" />
     </task>
-    <task id="LOCAL-00001" summary="Initial commit">
-      <created>1672776212177</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1672776212177</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Initial commit">
-      <created>1673169854526</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1673169854526</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Initial commit">
-      <created>1673180877196</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1673180877196</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Fixed orders">
-      <created>1673463620831</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1673463620831</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added associations">
-      <created>1673709730229</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1673709730229</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Added associations, and controller">
-      <created>1673784689977</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1673784689977</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Fixed associations">
-      <created>1673793080010</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1673793080010</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added few resources and added methods to services">
-      <created>1674657075767</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1674657075767</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Added ShopProduct, OrderProduct and fixed bugs">
-      <created>1675159253582</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1675159253582</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Added few methods, also created few resources">
-      <created>1676466082799</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1676466082799</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
-    <MESSAGE value="Fixed orders" />
-    <MESSAGE value="Added associations" />
-    <MESSAGE value="Added associations, and controller" />
-    <MESSAGE value="Fixed associations" />
-    <MESSAGE value="Added few resources and added methods to services" />
-    <MESSAGE value="Added ShopProduct, OrderProduct and fixed bugs" />
-    <MESSAGE value="Added few methods, also created few resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added few methods, also created few resources" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

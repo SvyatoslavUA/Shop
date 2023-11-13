@@ -3,16 +3,15 @@ package shop.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import shop.dto.OrderDTO;
-import shop.entity.Order;
-import shop.entity.User;
+import shop.entity.*;
 import shop.entity.enumeration.UserRole;
 import shop.entity.enumeration.Status;
 import shop.exeption.ServiceException;
 import shop.mapper.OrderToOrderMapperDTO;
-import shop.repositiry.OrderRepository;
-import shop.repositiry.UserRepository;
+import shop.repositiry.*;
 import shop.service.OrderService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -27,6 +26,10 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
+
 
 
     public List<OrderDTO> getAllOrdersForCustomer(final Long userId) {
@@ -53,6 +56,43 @@ public class OrderServiceImpl implements OrderService {
                 .map(orderToOrderMapperDTO::toDTO).collect(Collectors.toList());
     }
 
+    public OrderDTO createOrderWithProduct(final List<Long> productId, final int amount, final Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "User not found!"));
+        List<Product> product = productRepository.findAllById(productId).stream().toList();
+
+        if (product.isEmpty()) {
+            throw new ServiceException(400, "No products found!");
+        }
+
+        Shop shop = product.get(0).getProductsInShop().get(0).getShop();
+        double totalSum = product.stream().mapToDouble(Product::getPrice).sum();
+
+        Order order = new Order();
+
+        List<OrderProduct> orderProducts = new ArrayList<>();
+
+        for (Product products : product) {
+            OrderProduct orderProduct = new OrderProduct();
+
+            orderProduct.setOrder(order);
+            orderProduct.setProduct(products);
+            orderProduct.setAmount(amount);
+            orderProducts.add(orderProduct);
+        }
+
+        order.setShop(shop);
+        order.setCustomer(user);
+        order.setStatus(Status.IN_PROCESSING);
+
+        order.setOrderedProductWithAmount(orderProducts);
+
+        order.setCustomer(user);
+        order.setTotalAmount(totalSum);
+
+        orderRepository.save(order);
+
+        return orderToOrderMapperDTO.toDTO(order);
+    }
     public OrderDTO assignCourierToOrder(final Long courierId, final Long orderId) {
         User courier = userRepository.findById(courierId).orElseThrow(() -> new ServiceException(400, "!!!"));
         Order order = orderRepository.findById(orderId).orElseThrow(() -> new ServiceException(400, "!!!"));
@@ -67,7 +107,7 @@ public class OrderServiceImpl implements OrderService {
 
         order.setStatus(Status.DELIVERING);
         order.setCourier(courier);
-//        courier.getDelivered().add(order);
+        courier.getDelivered().add(order);
 
         orderRepository.save(order);
         userRepository.save(courier);
@@ -76,7 +116,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     public OrderDTO updateOrderInformation(OrderDTO orderDTO, Long userId) {
-        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
+        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "User not found!!!"));
 
         if (!Objects.equals(orderDTO.getCustomerId(), user.getId())) {
             throw new RuntimeException("You are not the customer of this order!");
@@ -91,7 +131,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     public OrderDTO updateStatusForOwner(Long orderId, Long userId, Status status) {
-        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
+        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "User not found!!!"));
         if (user.getRole() != UserRole.SHOP_OWNER) {
             throw new ServiceException(400, "You are not shop owner!!!");
         }
@@ -110,7 +150,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     public OrderDTO completeOrder(Long orderId, Long userId) {
-        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "!!!"));
+        User user = userRepository.findById(userId).orElseThrow(() -> new ServiceException(400, "User not found!!!"));
         if (user.getRole() != UserRole.COURIER) {
             throw new ServiceException(400, "You are not courier!!!");
         }

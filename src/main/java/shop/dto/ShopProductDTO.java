@@ -10,12 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ShopProductDTO {
+    private Long id;
 
 //    @NotNull
-    private Long productId;
+    private Long product;
 
 //    @NotNull
-    private Long shopId;
+    private Long shop;
 
 //    @NotNull
 //    @NotBlank

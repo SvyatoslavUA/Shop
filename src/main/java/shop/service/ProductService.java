@@ -9,5 +9,7 @@ public interface ProductService {
     List<ProductDTO> getAllProductsForShopOwner(Long userId);
     List<ShopProductDTO> getProductById(Long productId);
     ProductDTO addProducts(ProductDTO productDTO);
-    List<ShopProductDTO> getAllProductsForCustomer();
+    List<ProductDTO> getAllProductsForCustomer();
+
+    ProductDTO getBestProductFromEntered(List<Long> productIds);
 }

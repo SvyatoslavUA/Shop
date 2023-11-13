@@ -13,4 +13,5 @@ public interface OrderService {
     OrderDTO updateOrderInformation(OrderDTO orderDTO, Long userId);
     OrderDTO updateStatusForOwner(Long orderId, Long userId, Status status);
     OrderDTO completeOrder(Long orderId, Long userId);
+    OrderDTO createOrderWithProduct(List<Long> productId, int amount, Long userId);
 }

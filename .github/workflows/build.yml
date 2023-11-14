@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - base-crud
+      - main
 
 
 jobs:

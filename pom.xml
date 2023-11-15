@@ -100,12 +100,12 @@
             <artifactId>annotations</artifactId>
             <version>22.0.0</version>
         </dependency>
-<!--       <dependency>
+<!--        <dependency>-->
 <!--            <groupId>org.testng</groupId>-->
 <!--            <artifactId>testng</artifactId>-->
-<!--           <version>RELEASE</version>-->
+<!--            <version>RELEASE</version>-->
 <!--            <scope>test</scope>-->
- <!--       </dependency>-->
+<!--        </dependency>-->
              
         <dependency>
             <groupId>junit</groupId>

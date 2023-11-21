@@ -64,6 +64,10 @@ services:
       - /sys:/host/sys:ro
       - /:/rootfs:ro
 
+
+networks:
+  mynetwork:
+
 volumes:
   jenkins-data:
 

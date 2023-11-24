@@ -19,7 +19,7 @@ public class UserDetailsImpl implements UserDetails {
 
     private final Long id;
 
-    private final String username;
+    private final String email;
 
     @JsonIgnore
     private final String password;
@@ -31,7 +31,7 @@ public class UserDetailsImpl implements UserDetails {
 
         return new UserDetailsImpl(
                 user.getId(),
-                user.getName(),
+                user.getEmail(),
                 user.getPassword(),
                 authorities);
     }
@@ -52,7 +52,7 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public String getUsername() {
-        return username;
+        return email;
     }
 
     @Override

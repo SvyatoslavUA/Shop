@@ -14,10 +14,8 @@ import java.util.List;
 public class OrderDTO {
     private Long id;
 
-//    @NotNull
     private Long customerId;
 
-    //    @NotNull
     private List<OrderProductDTO> orderedProductWithAmount;
 
 //    @NotNull

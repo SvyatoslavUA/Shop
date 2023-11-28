@@ -5,7 +5,6 @@ pipeline {
         jdk 'jdk18'
         maven 'maven'
     }
-
     stages {
 
         stage('Build') {
